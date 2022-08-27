@@ -1,6 +1,7 @@
-/* 
-INTRODUCCION REACT
+// TIP: para ordernar el texto sin tener que scrollear para la derecha, use "Alt + z"
 
+// INTRODUCCION REACT
+/* 
 React es una librería de JavaScript, creada por facebook, para crear proyectos del lado del front-end. 
 Su implementación permite que la carga de la aplicación sea más rápida y performante. 
 ¿Cómo lo logra? React usa componentes, que no son otra cosa más que bloques de código reutilizables, 
@@ -211,6 +212,82 @@ import 'componenteEstilos.css';
 /* Si bien el proyecto esta modularizado y parece que en un principio no habría problema en repetir el nombre de las clases,
 es vital no hacerlo para que no existan problemas a la hora de renderizar la totalidad del sitio, ya que se empezarían a pisar las 
 clases entre si */
+
+// REACT ROUTER (ANOTACION)
+/* React funciona como una SPA (Simple Page Aplication), por lo que prácticamente tiene una sola página pero
+con muchas vistas. el problema está en como poder navegar por la spa para ver todo el contenido, como si de
+navegar colocando una url se tratase, pero sin ir a otra página. Para eso existe React Router.  */
+
+//COMPONENTES STATEFULL
+/* Son aquellos componentes que tiene un estado, o información interna que puede ser modificada por los mismos componenetes (se cambia el contenido interno debido a eventos externos). Es muy dinámico porque se deja de trabajar con props para usar información funcional. */
+// Hay que pensar que componentes van a ser "de estado" o no, dependiendo del "contexto" en el que se lo utilice.
+// No se van a trabajar como funciones nativas de JS, sino mas bien como una CLASE.
+
+import React, { Component } from 'react'
+//se importa react aclarando que queremos traer el objeto "Component"
+export default class NombreComponente extends Component {
+  render() {
+    return (
+        <></>
+      //Código a renderizar ... 
+    )
+  }
+};
+// Usamos class para definir al componente y "extends Component" para hacer referencia al objeto que importamos. Por ultimo se utiliza render() para renderizar el mismo.
+
+//se suele utilizar los componentes statefull cuando queremos INTERACTUAR CON EL USUARIO, y queremos que el componente cambie. Como los statefull son reactivos, el DOM se actualiza cuando se necesite.
+
+//STATE y SET STATE
+//al estado de un componente se le llama "State". Es un objeto literal (clave/valor) que almacenará la información que deseemos.
+// setState() es un método que nos permite programar una actualización al objeto State de un componente. Cuando esté cambia, el componente responde volviendo a renderizar 
+
+// el método "Constructor" es necesario para definir la estructura de un componente.
+class State extends Component {
+  constructor(props){
+    super(props);
+    //la función super() en el constructor es necesaria en react ya que se usar las props que se hereda del componente padre.
+    this.state({valor:props.value})
+    // dentro del constructor es donde unicamente podemos declarar "this.state"
+    //podemos recibir props en el instructor. es BUENA PRACTICA utilizarlas al llamar al super().
+  }
+  incrementar(){
+    this.setState({
+        valor: this.state.valor + 1 
+    });
+    // en los métodos que no sean constructor, debemos utilizar this.setState()
+  }
+  render(){
+    return(
+        <button onClick={this.incrementar}></button>
+        //con el evento onClick podemos modificar a través del metodo "incrementar" el estado del componente.
+    )
+  }
+}
+
+//EVENTOS
+/* Los eventos dentro de un componente de React son manejados a través de métodos que van a guardar la lógica que realizará una operación cuando el usuario interactúe con el componente */
+ // los métodos
+ /* Para definir un método usamos la misma sintaxis que al momento de escribir una función, pero sin la palabra "function" */
+ 
+ //los eventos
+ /* Son los mismos que en javaScript, solamente que hay que tener en cuenta:
+    + se escriben en la etiqueta, como si fueran un atributo
+    + se nombran usando "on" + nombre del evento, usando camelCase.
+    + se usan las llaves {} y la palabra reservada this para asociarlo con el método que queramos. */
+ class Evento extends Component {
+    saludar() {
+        alert('Hiciste click!')
+    }
+    // creamos un metodo que mande una alerta cuando se haga click
+   render() {
+     return (
+       <div>
+        <h1 onClick={this.saludar}></h1>
+        //como si fuese HTML, asignamos el evento e indicamos que método debe ejecutar.
+       </div>
+     )
+   }
+ }
 
 
 
