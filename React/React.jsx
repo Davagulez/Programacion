@@ -288,7 +288,74 @@ class State extends Component {
      )
    }
  }
+//
 
 
+//CICLO DE VIDA DE UN COMPONENTE
+
+ //ComponentDidMount()
+ function componentDidMount(){ 
+    console.log("El componente fue renderizado")
+ };
+ // function no va pero por el archivo lo colóco para que no haya problemas
+ /*
+ Solemos utilizar este método para identificar el momento del ciclo de vida del componente donde se ha renderizado por primera vez. Este método solo se ejecuta despúes de la primera renderización, del lado del usuario, por ende lo veríamos a traves de la consola del navegador. (un uso es para hacer algún pedido a una API)
+ */
+
+ //componentDidUpdate()
+ function componentDidUpdate(){
+    console.log('el componente fue actualizado');
+ };
+ /*
+ Método que utilizamos para identificar cuando un componente fue actualizado. Es decir, cuando sufrio ciertos cambios que hayamos programado en nuestro proyecto.
+ */
+
+ //componentWillUnmount()
+ function componentWillUnmont() {
+    console.log('el componente fue desmontado');
+ };
+ /*
+ Método que utilizamos para identificar cuando un componente va a dejar de existir (no va a volver a ser renderizado). Dentro del método se suele hacer una limpieza de cualquier otro método que haya estado utilizando el componente que se va a desmontar.
+ */
+//
+
+
+//INTEGRACIÓN CON APIS
+/* Con React podemos utilizar cualquier biblioteca AJAX. (ej: AXIOS, jQuery AJAX, window.fetch que es soportada de manera nativa en los navegadores modernos).
+*/
+// Utilizando componentDidMount(), despúes de la primera renderización, es donde se solicita la información de la API
+
+class Gifs extends Component {
+  //configuramos el estado del componente para que pueda almacenar la información de la API luego de hacer el fetch.
+  constructor(props) {
+    super(props);
+    this.state = {
+        gif: ""
+    }
+  }
+  //ejecutamos el fetch() hacia el endpoint donde está la información. Una vez procesada la data con .json, está lista para ser utilizada. En el segundo .then() asignamos información al estado del componente que habiamos declarado previamente.
+  componentDidMount() {
+    fetch('url de la api donde se solicita la información')
+     .then(response => {response.json})
+     .then(data => {this.setState({gif: data.image_url})})
+     .catch(e => {console.log(e)})
+  }
+  render() {
+    let contenido
+    // creamos la variable contenido, para decidir que mostrar en base si la info de la API esta disponible.
+    if(this.state.gif == ""){
+        contenido = <h3>Cargando...</h3>
+    } else {
+        contenido = <img src={this.state.gif} alt="" srcset="" />
+    }
+    // preguntamos si la info del gif esta disponible, y dependiendo del resultado, mostramos si ya esta disponible o se esta cargando.
+    <div>
+        {contenido}
+        <button>Hace click para ver un gif...</button>
+    </div>
+    //por ultimo programamos para que se muestre la variable donde se almacena el contenido disponible de la API
+  }
+}
+//
 
   
