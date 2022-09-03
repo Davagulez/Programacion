@@ -213,10 +213,6 @@ import 'componenteEstilos.css';
 es vital no hacerlo para que no existan problemas a la hora de renderizar la totalidad del sitio, ya que se empezarían a pisar las 
 clases entre si */
 
-// REACT ROUTER (ANOTACION)
-/* React funciona como una SPA (Simple Page Aplication), por lo que prácticamente tiene una sola página pero
-con muchas vistas. el problema está en como poder navegar por la spa para ver todo el contenido, como si de
-navegar colocando una url se tratase, pero sin ir a otra página. Para eso existe React Router.  */
 
 //COMPONENTES STATEFULL
 /* Son aquellos componentes que tiene un estado, o información interna que puede ser modificada por los mismos componenetes (se cambia el contenido interno debido a eventos externos). Es muy dinámico porque se deja de trabajar con props para usar información funcional. */
@@ -358,4 +354,47 @@ class Gifs extends Component {
 }
 //
 
+//SPA (Simple Page Aplication)
+ /*
+ SPA o también llamada Single Page Application es una aplicación web en la cual solo existe un único punto de entrada, generalmente un archivo index.html.
+
+ En una SPA no hay ningún otro archivo HTML al que se pueda acceder de manera separada, pues todo el contenido de la aplicación será cargado y renderizado dentro del mismo archivo index.html.
+
+ Dentro de este contexto, aunque solo tengamos un archivo, seguimos contando con la posibilidad de tener varias vistas que se irán intercambiando en su visualización, produciendo así el efecto de que dentro de la aplicación existen varias "páginas" o "archivos" de contenido, cuando la realidad es que todo se está mostrando desde un único archivo.
+
+ Una SPA ofrece, a su vez, una experiencia de usuario bastante agradable y fluida. Al no tener que cargar otro archivo distinto, la carga de contenido será mucho más rápida. Y es aquí en donde el Virtual DOM de React cobra un real protagonismo. Gracias a su existencia será posible identificar qué contenido de la vista tiene que cambiar y qué contenido tiene que mantenerse.
+ */
+//
+
+//REACT ROUTER DOM
+ /* React funciona como una SPA (Simple Page Aplication), por lo que prácticamente tiene una sola página pero
+ con muchas vistas. el problema está en como poder navegar por la spa para ver todo el contenido, como si de
+ navegar colocando una url se tratase, pero sin ir a otra página. Para eso existe React Router.  
+ */
+ /*
+ Para permitir que nuestra aplicación de React se comporte como un SPA real, tendremos que instalar React Router DOM para que nos permita gestionar el sistema de ruteo de una manera óptima e inteligente, y así poder renderizar los componentes de la aplicación selectivamente dependiendo de la ruta presente en la barra de direcciones del navegador.
+ */
+ //INSTALACIÓN
+ //1- hacemos un npm install del paquete react-router-dom: npm install react-router-dom
+ //2- hacemos un import de los métodos que vamos a necesitar de React Router Dom en nuestro archivo app.js
+ // import {BrowserRouter, Link, Route} from 'react-router-dom'
+//
+
+//COMPONENTES DE REACT ROUTER DOM
+ /*
+ Cuando importamos react router llamamos a métodos específicos porque dichos métodos son componentes que nos van a permitir configurar nuestro sistema de navegación dentro de nuestra SPA.
+ */
+
+ //BrowserRouter
+ // Este componente es el enrutador general y necesario para la administración de rutas de nuestro proyecto. Es como una envoltura de la enrutación del proyecto.
+ ReactDOM.render(
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>,
+    document.getElementById("root")
+ );
+
+ //Link
+ //
+//
   
