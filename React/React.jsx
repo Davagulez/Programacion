@@ -355,46 +355,98 @@ class Gifs extends Component {
 //
 
 //SPA (Simple Page Aplication)
- /*
- SPA o también llamada Single Page Application es una aplicación web en la cual solo existe un único punto de entrada, generalmente un archivo index.html.
+    /*
+    SPA o también llamada Single Page Application es una aplicación web en la cual solo existe un único punto de entrada, generalmente un archivo index.html.
 
- En una SPA no hay ningún otro archivo HTML al que se pueda acceder de manera separada, pues todo el contenido de la aplicación será cargado y renderizado dentro del mismo archivo index.html.
+    En una SPA no hay ningún otro archivo HTML al que se pueda acceder de manera separada, pues todo el contenido de la aplicación será cargado y renderizado dentro del mismo archivo index.html.
 
- Dentro de este contexto, aunque solo tengamos un archivo, seguimos contando con la posibilidad de tener varias vistas que se irán intercambiando en su visualización, produciendo así el efecto de que dentro de la aplicación existen varias "páginas" o "archivos" de contenido, cuando la realidad es que todo se está mostrando desde un único archivo.
+    Dentro de este contexto, aunque solo tengamos un archivo, seguimos contando con la posibilidad de tener varias vistas que se irán intercambiando en su visualización, produciendo así el efecto de que dentro de la aplicación existen varias "páginas" o "archivos" de contenido, cuando la realidad es que todo se está mostrando desde un único archivo.
 
- Una SPA ofrece, a su vez, una experiencia de usuario bastante agradable y fluida. Al no tener que cargar otro archivo distinto, la carga de contenido será mucho más rápida. Y es aquí en donde el Virtual DOM de React cobra un real protagonismo. Gracias a su existencia será posible identificar qué contenido de la vista tiene que cambiar y qué contenido tiene que mantenerse.
- */
+    Una SPA ofrece, a su vez, una experiencia de usuario bastante agradable y fluida. Al no tener que cargar otro archivo distinto, la carga de contenido será mucho más rápida. Y es aquí en donde el Virtual DOM de React cobra un real protagonismo. Gracias a su existencia será posible identificar qué contenido de la vista tiene que cambiar y qué contenido tiene que mantenerse.
+    */
 //
 
 //REACT ROUTER DOM
- /* React funciona como una SPA (Simple Page Aplication), por lo que prácticamente tiene una sola página pero
- con muchas vistas. el problema está en como poder navegar por la spa para ver todo el contenido, como si de
- navegar colocando una url se tratase, pero sin ir a otra página. Para eso existe React Router.  
- */
- /*
- Para permitir que nuestra aplicación de React se comporte como un SPA real, tendremos que instalar React Router DOM para que nos permita gestionar el sistema de ruteo de una manera óptima e inteligente, y así poder renderizar los componentes de la aplicación selectivamente dependiendo de la ruta presente en la barra de direcciones del navegador.
- */
- //INSTALACIÓN
- //1- hacemos un npm install del paquete react-router-dom: npm install react-router-dom
- //2- hacemos un import de los métodos que vamos a necesitar de React Router Dom en nuestro archivo app.js
- // import {BrowserRouter, Link, Route} from 'react-router-dom'
+    /* React funciona como una SPA (Simple Page Aplication), por lo que prácticamente tiene una sola página pero
+    con muchas vistas. el problema está en como poder navegar por la spa para ver todo el contenido, como si de
+    navegar colocando una url se tratase, pero sin ir a otra página. Para eso existe React Router.  
+    */
+    /*
+    Para permitir que nuestra aplicación de React se comporte como un SPA real, tendremos que instalar React Router DOM para que nos permita gestionar el sistema de ruteo de una manera óptima e inteligente, y así poder renderizar los componentes de la aplicación selectivamente dependiendo de la ruta presente en la barra de direcciones del navegador.
+    */
+    //INSTALACIÓN
+    //1- hacemos un npm install del paquete react-router-dom: npm install react-router-dom
+    //2- hacemos un import de los métodos que vamos a necesitar de React Router Dom en nuestro archivo app.js
+    // import {BrowserRouter, Link, Route} from 'react-router-dom'
 //
 
 //COMPONENTES DE REACT ROUTER DOM
- /*
- Cuando importamos react router llamamos a métodos específicos porque dichos métodos son componentes que nos van a permitir configurar nuestro sistema de navegación dentro de nuestra SPA.
- */
+    /*
+    Cuando importamos react router llamamos a métodos específicos porque dichos métodos son componentes que nos van a permitir configurar nuestro sistema de navegación dentro de nuestra SPA.
+    */
 
- //BrowserRouter
- // Este componente es el enrutador general y necesario para la administración de rutas de nuestro proyecto. Es como una envoltura de la enrutación del proyecto.
- ReactDOM.render(
+    //BrowserRouter
+    // Este componente es el enrutador general y necesario para la administración de rutas de nuestro proyecto. Es como una envoltura de la enrutación del proyecto.
+    ReactDOM.render(
     <BrowserRouter>
         <App/>
     </BrowserRouter>,
     document.getElementById("root")
- );
+    );
 
- //Link
- //
+    //Link
+    //Es el componente que define las rutas de nuestro proyecto. Tiene como atributo el to="/", que siempre va a llevar alguna etiqueta <a> donde el to="/" concida con el href="/".
+    <link to="/">Home</link>
+
+    //Switch y Route
+    //ambos buscan la similitud de rutas entre sí hasta encontrar una que concida para renderizar. Cuando <Switch/> es renderizado, busca entre sus componentes hijos <Route/>, hasta que las rutas coinciden y finalmente esta aréa esta renderizada.
+    /*
+    <Switch>
+    <Route path="/nosotros">
+        <Nosotros/>
+    </Route>
+    <Route path="/contacto">
+        <Contacto/>
+    </Route>
+    <Route path="/">
+        <Inicio/>
+    </Route>
+    </Switch>
+    */
+
 //
-  
+
+//Creando la primera ruta y renderizando un componente específico
+
+    //Requisitos
+    // 1- instalar el modulo de react-router-dom
+    // 2- importar el modulo y sus componentes (BrowserRouter, Link, Route y Switch)
+    // 3- englobar el componente <App/> dentro del componente <BrowserRouter/>
+
+    //Route
+    //el componente <Route/> lleva dos atributos, path="" y component={}. Ambos nos ayudan a configurar que componentes debemos renderizar en base a la ruta que se esta accediendo.
+    /*
+    <Route path="/about" exact={true} component={About}/>
+    <Route path="/contact" exact={true} component={Contact}/>
+    <Route path="/" exact={true} component={Home}/>
+    */
+    // utilizamos la props exact={true} para que react DOM no encuentre similitudes entre las rutas (todas comienzan con "/") y renderize siempre <Home/>. con exact={true} establecemos que renderize <Home/> solamente cuando la ruta sea exactamente "/"
+
+    //Link
+    // parecido a Route pero se asimila a un enlace tradicional. lleva dos props to="" y exact="" con las que se configura el sistema de ruteo.
+    /* 
+    <link to="/about" exact="true">About</link>
+    <link to="/contact" exact="true">Contact</link>
+    <link to="/" exact="true">Home</link>
+    */
+//
+
+// Switch de rutas y componentes
+    //Switch es un componente de React Router que permite buscar la coincidencia con alguna de las rutas que hayamos definido con Route.
+    
+    //Importación
+    // ya que Switch es un componente de React Router, debemos importarlo. Lo requerimos de la misma manera que los otros componentes con los que trabaja react router.
+    // import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+
+//
+
