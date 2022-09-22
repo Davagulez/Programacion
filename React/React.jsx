@@ -447,6 +447,37 @@ class Gifs extends Component {
     //Importación
     // ya que Switch es un componente de React Router, debemos importarlo. Lo requerimos de la misma manera que los otros componentes con los que trabaja react router.
     // import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
-
+    // el componente <Switch/> va a albergar a todos los elementos <Route/> que tengamos definidos. Se recomienda agregar a lo último, un componente <Route/> que no tenga una ruta especificada, con un componente preparado para responder cuando no se encuentre una ruta específica.  
 //
+
+// Rutas Parametrizadas
+        /*
+        React Router nos permite guardar valores en las rutas parametrizadas. Esto nos permite renderizar valores dentro de los componentes dependiendo de la información que nos llega de la ruta.
+
+        Las rutas parametrizadas las definimos en el componente <Route/>. LLevan dos puntos (:) y el nombre del dato. 
+        <Route path="/usuarios/:id" component={Usuarios} />
+        */
+
+        //React Router nos provee de props que contienen información de la ruta que definimos en <Route/>. Dentro de las props, encontramos la propiedad .match, la cual ofrece la propiedad .params, que contiene la info que viaja a traves de la ruta parametrizada.
+
+        //Si queremos acceder al valor que viajo por la ruta, deberiamos hacerlo de la siguiente manera en nuestro componente (tener en cuenta que id fue el nombre que le pusimos a la ruta, pero puede ser cualquier otro)
+
+        function ComponenteRutaP(props) {
+            const usuarios = [...usuarios];
+            const id = props.match.params.id;
+            const usuario = usuarios.find(user => user.id === id);
+          return (
+            <div>
+                <h3>{usuario.nombre}</h3>
+            </div>
+          )
+        }
+//
+
+// INTRODUCCION A HOOKS 
+        
+//
+
+
+
 
