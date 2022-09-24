@@ -47,7 +47,7 @@ function navbar() {
 }
 
 //Para crear un componente, lo primero que tenemos que hacer es importar React
-import React, {Component} from "react"; //en index.js
+import React, {Component, useEffect} from "react"; //en index.js
 export default Navbar // en Navbar.js
 
 //para implementar un componente, debemos crear un archivo con extensión .js con el nombre de la función 
@@ -475,7 +475,39 @@ class Gifs extends Component {
 //
 
 // INTRODUCCION A HOOKS 
-        
+    /* Los hooks son funciones nativas de javascript que nos van a permitir "enganchar" características (como el ciclo de vida y el estado) a componentes que no sean de clase. (Los hooks NO FUNCIONAN en componentes de clase).
+    //Ventajas: 
+       - Podemos reutilizar métodos entre los componentes. 
+       - Podemos servirnos del estado de un componente en aquellos que son funciones de JS.
+    
+    */
+   useEffect(() => {
+    //codigo que se ejecuta una vez montado el componente
+    //se pueden pasar varias actualizaciones
+     return () => {
+    // codigo que se ejecuta una vez desmontado el componente.
+     }
+   })
+//
+
+// HOOK - useState()
+   /* useState() sirve para manejar el estado de un componente y es fácil de montarlo, a diferencia de cuando se establecía en la clase por medio del Constructor y el método super(). (Lin.236)
+    */
+   // el único argumento que usa useState() es el estado inicial.
+//
+
+// HOOK - useEffect()
+   /* Este hook sirve para gestionar el ciclo de vida de un componente, tanto cuando se monta, actualiza y cuando se desmonta.
+    */
+   // useEffect() recibe dos argumentos. El primero será un callback y el segundo un array.
+   // si al segundo argumento pasamos un array vacío, Le indicamos al Hook que no queremos que le haga seguimiento a ninguna dependencia y, por lo tanto, se ejecutará una sola vez, es decir, cuando el componente se monta.
+//
+
+// HOOK - useRef()
+   /* Este Hook permite seleccionar elementos del DOM de manera fácil y sencilla, tal como hacíamos con el querySelector de JavaScript Vanilla.
+
+   useRef() es realmente sencillo de usar. Lo único que necesitamos es ejecutarlo y guardar su valorde retorno dentro de una variable y, posteriormente, usar dicha variable dentro de la estructuraHTML del elemento que deseamos capturar.
+    */
 //
 
 
