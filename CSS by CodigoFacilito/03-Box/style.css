@@ -1,0 +1,81 @@
+.caja{
+  /* border: 1px solid red;   */
+  background-color: steelblue;
+  color: #f8f8f8;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  width: 200px;
+  height: 200px;
+  /*propiedad Padding*/
+  padding-top: 30px;
+  padding-right: 50px;
+  padding-bottom: 70px;
+  padding-left: 100px;
+  /*Shorthand padding*/
+  padding: 30px 60px;
+  /*propiedades Border*/
+  border-color: purple;
+  border-style: solid;
+
+ /*  border-top-width: 1px;
+  border-right-width: 3px;
+  border-bottom-width: 5px;
+  border-left-width: 7px; */
+  border-width: 14px;
+
+ /*  border-top-style: dotted;
+  border-right-style: dashed;
+  border-bottom-style: solid;
+  border-left-style: double; */
+  border-style: dotted dashed solid double;
+  /* 
+  dotted
+  dashed
+  solid
+  double
+  groove
+  */
+
+  /*  border-top-color: red;
+  border-right-color: blue;
+  border-bottom-color: black;
+  border-left-color: yellow; */
+  border-color: red;
+
+  border:30px solid crimson
+}
+
+.caja1{
+    /* margin: 80px; */
+    /* margin-top: 20px;
+    margin-right: 40px;
+    margin-bottom: 60px;
+    margin-left: 10px; */
+
+    /* margin: 20px 40px 60px 10px; */
+
+    /* propiedad auto solo se puede aplicar a margin-right y margin-left debido a que es una propiedad que solo afecta horizontalmente al elemento */
+    /* margin-right: auto;
+    margin-left: auto; */
+    /* para centrar elementos con margenes automaticos, se necesitan dos condiciones: que el elemento al que se le aplica el margin:auto tenga un width definido, y que tenga un display block */
+    margin: 0 auto;
+}
+
+/* Colapso de margenes (cuando dos margenes como los del eejemplo de abajo se juntan, el margin mas grande prevalece)*/
+
+main{
+    background-color: steelblue;
+    color: white;
+    margin-bottom: 80px;
+}
+
+/* otro caso es cuando se mezclan los margenes de los hijos con el padre. Esto solo sucede con el primer y ultimo elemento de cada contenedor padre. Para solucionar esto en el contenedor padre se coloca un margin o padding que evite que los margenes se toquen*/
+.main-title{
+    margin-top: 40px;
+}
+
+footer{
+    color: white;
+    background-color: slateblue;
+    margin-top: 40px;
+}

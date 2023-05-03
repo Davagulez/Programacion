@@ -1,0 +1,36 @@
+/*Selector Universal*/
+/* *{
+    color: red;
+} */
+
+
+/*Selector de Tipo*/
+/* p{
+    color: red;
+} */
+
+
+/*Selector de clase*/
+/* .titulo{
+    color: blue;
+    font-size: 30px;
+}
+.negrita{
+    font-weight: bolder;
+}
+#titulo{
+    color: steelblue;
+    font-size: 50px;
+} */
+
+
+/*Selector Combinado*/
+.abuelo .titulo{
+    color: crimson;
+    font-size: 40px;
+}
+
+.abuelo>.titulo{
+    color: steelblue;
+    font-size: 60px;
+}

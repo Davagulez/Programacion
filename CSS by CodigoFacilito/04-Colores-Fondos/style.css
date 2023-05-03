@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+ 
+.title{
+    margin: 70px;
+    /* color: midnightblu */
+    /* rgb */
+    /* color: rgb(0,255,180, 1); */
+    /* color: #aaffadd4; */
+    color: hsl(200, 100%, 80%);
+}
+
+.background{
+    height: 600px;
+    background-color: #485248;
+    /* background-image: url(./images/th-1407658738.jpeg);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center; */
+    /* top left bottom right center */
+
+    /* linear gradient */
+    background-image: linear-gradient(rgba(255,105,180,0.527),rgba(70,131,180,0.534)), url(./images/th-2720494730.jpeg);
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+
+}
+
+h2{
+    margin-top: 100px;
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+}

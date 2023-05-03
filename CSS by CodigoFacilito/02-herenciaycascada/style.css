@@ -1,0 +1,25 @@
+body{
+    font-family: cursive;
+    color: red;
+    border: 2px solid #000
+}
+
+h1{
+    border:inherit
+}
+
+button{
+    color: inherit;
+}
+
+input{
+    font-family: inherit;
+}
+
+
+/* Especificidad */
+/*1- Selectores de tipo, PSeudoelementos ::*/
+/*10- Selector de clase, Pseudoclases :, []*/
+/*100- Selector de ID */
+
+/*Cuando hay un empate de especificidad entre elementos, se usa la regla de la cascada, y el ultimo valor declarado para la variables es el que queda. Es mala practica usar !important, porque no es necesario darle tanta especificidad a los selectores, y complica el mantenimiento del código*/
