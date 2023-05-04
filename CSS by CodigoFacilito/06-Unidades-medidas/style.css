@@ -9,6 +9,7 @@ html{
 
 body{
     font-family: Arial;
+    height: 1500px;
 }
 
 .container{
@@ -16,6 +17,12 @@ body{
     color: #fff;
     padding: 30px;
     font-size:20px;
+
+    /* vw */
+    /* vw ocupa todo el espacio de la pantalla, incluyendo el scroll, por lo que por ahí no es muy buena opción */
+    width:80%;
+    /* vh */
+    height: 80vh;
 }
 
 .title{margin-bottom: 20px;}

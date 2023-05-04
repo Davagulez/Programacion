@@ -1,0 +1,30 @@
+*{
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+    min-height: 300vh;
+}
+
+.sticky{
+    width: 140px;
+    height: 140px;
+    background-color: slateblue;
+    position: sticky;
+    top: 40px;
+    bottom: 30px;
+    /* sticky */
+    /* este posicionamiento es una mezcla entre relative y fixed, porque queda en el mismo estado hasta un cierto punto, donde se transforma en fixed, hasta el limite de su contenedor padre. Con top y bottom definimos a partir de que distancia se queda pegado, pero necesitamos que su contenedor padre tenga un height definido. Es lo mismo para el desplazamiento horizonal */
+}
+
+.container{
+    width: 800px;
+    height: 500px;
+    background-color: aquamarine;
+}
+
+.container .sticky{
+    left: 200px;
+}
