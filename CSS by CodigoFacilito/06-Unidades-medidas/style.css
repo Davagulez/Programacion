@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html{
+    font-size:40px;
+}
+
+body{
+    font-family: Arial;
+}
+
+.container{
+    background-color: slateblue;
+    color: #fff;
+    padding: 30px;
+    font-size:20px;
+}
+
+.title{margin-bottom: 20px;}
+
+.primero{
+    font-size: 1.5rem;
+}
+
+.segundo, .tercero{
+    font-size: 24px;
+}
+
+.cuarto{
+    font-size: 2em;
+}
