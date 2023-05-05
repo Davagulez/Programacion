@@ -29,6 +29,7 @@ body{
 
 .primero{
     font-size: 1.5rem;
+    /* rem: la unidad rem es relativa al tamaño de la raiz del documento(etiqueta html). Por defecto la etiqueta html tiene un font-size de 16px por lo que 1rem = 16px por default*/
 }
 
 .segundo, .tercero{
@@ -37,4 +38,6 @@ body{
 
 .cuarto{
     font-size: 2em;
+    /* em: la unidad em es relativa al tamaño del contenedor padre o contenedor mas cercano donde tenga un font-size declarado, desde el elemento en el que se aplica em */
+    /*Una vez que se aplica em en un elemento, si en otra propiedad del mismo elemento quiero utilizar la misma unidad, va a tomar de referencia el primer valor de referencia declarado en font-size*/
 }

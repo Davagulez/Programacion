@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container{
+    width: 90%;
+    /* height: 600px; */
+    outline: 2px solid;
+    margin: 80px auto;
+    display: grid;
+    /* grid-template-columns y template-rows sirven para definir el espacio dentro del grid */
+    grid-template-columns:repeat(5,1fr);
+    grid-template-rows:repeat(5,1fr);
+    /* fr es una funcion que toma todo el espacio disponible y lo divide en cada una de las partes establecidas en la funcion repeat() */
+    /* el gap en grid reemplaza el uso de margin en cada elemento */
+    /* column-gap: 15px;;
+    row-gap: 15px; */
+
+}
+
+.item{
+    /* width: 100px; */
+    height: 100px;
+    color: #fff;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item1{
+    background-color: slateblue;
+    /* Cuando usamos grid-column y grid-row  nos permite recibir dos valores como coordenadas para especificar donde empieza y termina el grid-item. Estos numeros se separan por diagonal*/
+    grid-column: 1/4;
+    grid-row: 1/4;
+}
+.item2{
+    background-color: deeppink;
+}
+.item3{
+    background-color: tomato;
+}
+.item4{
+    background-color: darkseagreen;
+}
+.item5{
+    background-color: midnightblue;
+}
+
+
+/* TEORIA DE CSS GRID */
+/* CSS Grid Layout (Sistema de Cuadriculas) es el sistema mas poderoso de diseño disponible en CSS. Esto es gracia a su sistema bidimensional, lo que significa que se puede manejar tanto columnas como filas */
+
+/* Se le llama Grid o cuadricula porque se utilizan filas y columnas. Estas filas y columnas crean una cuadricula, donde cada fila y columna esta formada por dos lineas (Grid-lines) */
+
+/* Para entender Grid, hay que verlo como una cuadricula, compuesta de muchas celdas. Al principio los grid-items ocuparan una celda por cada grid-item */
+
+/* un Grid Area es un espacio entre cuatro grid lines. Puede estar formado pro el numero que sea de celdas, pero un grid area SIEMPRE debe ser rectangular o cuadrado */

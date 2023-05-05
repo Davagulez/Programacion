@@ -1,0 +1,45 @@
+:root{
+    /* variables */
+    /* :root es una pseudoclase igual a html, es decir, es la raiz del proyecto, entonces yo almaceno todas las custom properties acá y las voy a poder usar en cualquier lugar del archivo css */
+    /* para declarar una custom propertie primero van dos guiones medios "--" seguido del nombre sin espacios, para cuando se quiera agregar mas de una palabra se puede usar guion medio o bajo, no hay diferencia. Ej: --bordes-colores */
+    --bordes-colores: 3px solid #000;
+    --color-principal: crimson;
+    --padding-botones: 15px 30px;
+    --gradientes: linear-gradient(royalblue,hotpink);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    --color-principal: royalblue;
+    --fuentes: cursive;
+    /* dentro de un elemento en especifico puedo renombrar la variable, y lo que provoca es que en todo el html el valor sea igual pero para todos los elementos dentro de container solo usan royalblue */
+    /* De igual manera --fuentes solo afecta a los elementos dentro de container. Tengo dos textos de clase paragraph pero solo el que esta dentro de container se ve afectado */
+}
+
+.title{
+    color: var(--color-principal);
+    border: var(--bordes-colores);
+    font-family: var(--fuentes);
+}
+
+.btn{
+    display: inline-block;
+    padding: var(--padding-botones);
+    /* background-color: var(--color-principal); */
+    /* las custom properties de gradientes solo funcionan con background-image */
+    background-image: var(--gradientes);
+    color: #fff;
+    text-decoration: none;
+}
+
+.paragraph{
+    color: var(--color-principal);
+    font-family: var(--fuentes);
+}

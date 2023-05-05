@@ -1,0 +1,55 @@
+*{
+    margin: 0 ;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flex{
+    width: 90%;
+    max-width: 800px;
+    min-height: 600px;
+    margin: 80px auto;
+    border: 3px solid #000;
+    /* flex */
+    /* flex es un modulo css que permite que los elementos que funcionan como bloques, sean flexibles, partiendo de un comportamiento en el que se situan uno al lado del otro */
+    display: flex;
+    flex-direction: row;
+    /* row | row-reverse | column | column-reverse */
+    flex-wrap: nowrap;
+
+    /* Para alinear los elementos de manera horizontal y/o vertical, es necesario tener espacio en el flex-container*/
+    justify-content: flex-start;
+    align-items: start;
+    /* align-content sirve para acomodar las filas según el cross-axis. Esto solo se puede dar cuando  flex-wrap esta en su valor wrap*/
+    align-content: center;
+}
+
+.element{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+
+    /* order: es una propiedad para los flex-items que permita definir el orden. por defecto todos tienen 0 en order. Cuando se aumenta el order a 1 por ejemplo, el elemento con order:1 se muestra al final de los items. tambien acepta valores negativos, y se mostrarian al principio */
+
+    /* flex-grow y flex-shrink: permite definir la proporcion en la que los elementos van a ir ocupando espacio o van a ir cediendo espacio cuando falta */
+
+    /* flex-basis: define los tamaños del los elementos en el main-axis, antes de que se aplique flex-grow y flex-shrink */
+
+    /* align-self:  alinea a traves de cross-axis. Es similar a align-items, pero se aplica de manera especifica a un elemento*/
+}
+
+.element1{
+    background-color: crimson;
+}
+.element2{
+    background-color: purple;
+}
+.element3{
+    background-color: steelblue;
+}
