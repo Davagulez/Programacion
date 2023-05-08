@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.element{
+    margin: 60px; 
+    width: 200px;
+    height: 200px;
+    background-color: royalblue;
+    border-radius: 50%;
+
+    /* animation-name: mover;
+    animation-duration: .5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    /* animation-delay: 3s; */
+    /* animation-fill-mode: both; */
+    animation: 2s mover infinite both alternate;
+}
+
+@keyframes mover{
+    0%{
+        transform: translate(0) scale(.5);
+        background-color: crimson;
+    }
+    25%{
+        transform: translate(100%);
+        background-color: salmon;
+    }
+    50%{transform: translate(100%,100%);
+        background-color: slateblue;}
+    75%{
+        transform: translate(0,100%);
+        background-color: teal;
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes crecer{
+    0%{
+        transform: scale(1.2);
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    40%{
+        transform: scale(2);
+    }
+    60%{
+        transform: scale(1.5);
+    }
+    100%{transform: scale(1.2)}
+}
+
+@keyframes cambia-color {
+    from{
+        background-color: #000;
+    }
+    to{
+        background-color: steelblue;
+    }
+}
