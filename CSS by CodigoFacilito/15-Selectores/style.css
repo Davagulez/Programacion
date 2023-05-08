@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+}
+
+.button{
+    margin: 50px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 0;
+    text-align: center;
+    width: 200px;
+    transition: 1s all;
+}
+
+/* Selector de hermano adyacenter */
+/* este selector permite seleccionar al elemento siguiente de un determinado elemento. Siempre y cuando el elemento principal no sea el unico elemento dentro de un contenedor */
+/* .elemento-referencia + .hermano-siguiente{} */
+
+.btn-blue{
+    background-color: slateblue;
+}
+
+.btn-blue:active{
+    font-size: 30px;
+}
+
+.btn-red{
+    background-color: crimson;
+}
+
+.btn-tomato{
+    background-color: tomato;
+}
+
+/* con ~ podemos seleccionar todos los hermanos adyacentes que cumplan con la condición, en este caso que su clase sea button */
+/* .btn-red:hover ~ .button{
+    background-color: black;
+    translate: 100%;
+} */
+
+/* .btn-blue:hover{
+    transform: scale(1.2);
+} */
+
+
+/* .element:target{
+    background-color: #000;
+    transform:  translate(100%);
+} */
+
+.input{
+    display: block;
+    margin: 20px;
+    padding: 16px;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+/* .input:focus + .label{
+    background-color: aquamarine;
+} */
+
+.label{
+    background-color: crimson;
+    color: #fff;
+}
+
+.check{
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.check:checked + .label{
+    background-color: green;
+}
+
+.element{
+    width: max-content;
+    padding: 20px 0;
+    background-color: steelblue;
+    color: #fff;
+    font-size: 30px;
+    margin: 60px;
+
+}
+
+/* Pseudoelementos */
+/* After y before crean elementos desde el css pero que no se puede seleccionar o acceder a ellos debido a que no están en el html. De todas formas se le puede dar estilos como a cualquier otro elemento */
+
+.element::before{
+    content:"Hola";
+    display: block;
+    background-color: green;
+}
+
+.element::after{
+    content:"Hola Mundo";
+    display: block;
+    background-color: crimson;
+    padding: 16px;
+}
