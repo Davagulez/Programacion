@@ -154,3 +154,142 @@ body{
     line-height: 1.5;
     margin-top: 1em;
 }
+
+/* Brands */
+
+.brands{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.5em;
+}
+
+.action{
+    text-align: center;
+}
+
+/* footer */
+
+.footer{
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+
+.footer__img{
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.footer__links{
+    margin: 4em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.footer__link{
+    text-decoration: none;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.footer__link:hover{
+ text-decoration: underline;   
+}
+
+.footer__social{
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+}
+
+.footer__media{
+    text-decoration: none;
+}
+
+.footer__icon{
+    display: block;
+}
+
+@media(min-width:768px){
+
+    .hero{
+        --padding-container: 120px 0 90px;
+        background-image: url('../images/bg-header-desktop.png');
+    }
+
+    .title{
+        font-size: 2.5rem;
+    }
+    
+    .buttons{
+        margin-top: 3em;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .buttons__cta{
+
+        padding: 1em 3em;
+       
+    }
+
+    /* tracks */
+
+    .track{
+        --padding-container: 80px 0 0;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .track__title{
+        font-size: 2.5rem;
+    }
+
+    .track__texts{
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 1.5em;
+    }
+
+    .track__picture{
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+        height: 700px;
+    }    
+
+    .track__img{
+        width: 125%;
+        max-width: 650px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+.track__articles{
+    width: 42%;
+    gap: 3.5em;
+    margin: 0 auto;
+    text-align: left;
+    align-self: center;
+}
+
+.track__offer{
+    color: var(--Dark-Grayish-Blue);
+    font-size: 1.5rem;
+}
+
+.track__copy{
+    margin-top: .7em;
+    line-height: 1.5;
+    color: var(--Grayish-Blue);
+}
+    
+
+}
