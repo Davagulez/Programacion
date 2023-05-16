@@ -272,24 +272,99 @@ body{
         margin: auto 0;
     }
 
-.track__articles{
-    width: 42%;
-    gap: 3.5em;
-    margin: 0 auto;
-    text-align: left;
-    align-self: center;
-}
+    .track__articles{
+        width: 42%;
+        gap: 3.5em;
+        margin: 0 auto;
+        text-align: left;
+        align-self: center;
+    }
 
-.track__offer{
-    color: var(--Dark-Grayish-Blue);
-    font-size: 1.5rem;
-}
+    /* clipboard */
 
-.track__copy{
-    margin-top: .7em;
-    line-height: 1.5;
-    color: var(--Grayish-Blue);
-}
-    
+    .clipboard{
+        --padding-container: 20px 0 80px;
+    }
 
+
+    .clipboard__img{
+        max-width: 700px;
+    }
+
+    .clipboard__offer{
+        margin-top: 4em;
+        flex-direction: row;
+        gap: 2em;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .clipboard__item{
+        flex: 1;
+    }
+
+    /* Brands */
+
+    .brands{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2em;
+    }
+
+    .brands__item{
+        min-width: 100px;
+        max-width: 130px;
+        flex: 1;
+    }
+
+
+    /* footer */
+
+    .footer__container{
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    }
+
+
+    .footer__img{
+        width: 70px;
+    }
+
+    .footer__links{
+        margin: 0;
+        flex-direction: row;
+        gap: 1em;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .footer__link{
+        width: 28%;
+    }
+
+    .footer__social{
+        margin-left: auto;
+    }
+
+    .link1{
+        order: 0;
+    }
+
+    .link2{
+        order: 3;
+    }
+
+    .link3{
+        order: 1;
+    }
+
+    .link5{
+        order: 2;
+    }
+
+    .link4{
+        order: 4;
+    }
 }
