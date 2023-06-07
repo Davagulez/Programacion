@@ -1,0 +1,13 @@
+CSS Grid Layout (sistema de cuadriculas) es el sistema de sieño mas poderoso disponible en css. Esto gracias a su sistema bidimensional, lo que significa que puede manejar tanto columnas como filas, a diferencia de flexbox, que es en gran medida un sistema unidimensional.
+
+Conceptos Fundamentales:
+- Grid container: de la misma manera que flexbox, para poder usar css grid se va a necesitar un contenedor. Dicho contenedor de lo va a denominar grid-container-
+- Grid Item: los hijos directos del grid-container se los conoce como grid-items.
+- Debido a que se trabaja con un sistema bidimensional, se usaran filas(rows) y columnas(columns).
+- las celdas o grid-cells son la parte mas pequeña de grid. Por defecto cada grid-item se va a posicionar en una celda de la grid. (la suma de las celdas es la Grid completa).
+- Grid-lines: las cuadriculas estan compuestas por lineas. Lineas verticales(column-grid-lines) y lineas horizontales(row-grid-lines)
+- Cada celda tiene una linea de inicio y una de fin.
+-las lineas se van a enumerar 
+- Grid-tracks: espacio entre dos grid-lines adyacentes, tambien se les conoce como filas y columnas.
+- Grid-area: espacio entre cuatro grid-lines. un Grid-area puede estar formado por el numero que sea de celdas, pero siempre debe ser rectangular o cuadrado.
+
