@@ -23,8 +23,23 @@ body{
     /* alineacion horizontal*/
     /* justify-items: stretch; */ 
 
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4,25%);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4,1fr);
+
+    /* Grid auto */
+    /* grid-auto-flow: dense; */
+
+    /*     grid-auto-rows: 1fr;
+            grid-auto-columns: 1fr;
+    */
+
+    /*GAP*/
+    /* Cuando se crean filas y columnas con fr, los grid-items adquieren el espacio despúes de definirse los gap*/
+    /* row-gap: 3em;
+    column-gap: 10px; */
+    /* gap: 10px 10px; */ 
+
+    
 
     /* Diferencias entre fr y auto: dan el mismo espacio, nada mas que auto, le da el tamaño minimo según el contenido a cada celda, y fr da un tamaño equitativo sin importar el contenido*/ 
 
@@ -64,7 +79,9 @@ body{
     grid-row: span 2 / -1; */
 
     /* grid-area: row-start/ column-start / row-end / column-end*/
-    grid-area: 2 / 1 / 4 / 5;
+  /*   grid-area: 2 / 1 / 4 / 5; */
+  grid-column: 3;
+    
 }
 
 .item-2{
