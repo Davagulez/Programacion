@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+    "header"
+    "main"
+    "sidebar"
+    "footer"
+    ;
+    /* cuando se pone un . en el grid-template-area, es porque estamos indicando que esa celda va a estar vacía. Siempre y cuando el area que quede siga cumpliendo la regla de ser cuadrada o rectangular */
+  
+    /* grid-template-areas: 
+    "juan jesus victor" 
+    "enrique enrique enrique"
+    "roberto roberto roberto"; */
+    /*Por cada nombre se crea un area. Todas deben tener la misma cantidad o de lo contrario se rompe. Se pueden definir los tamaño según grid-auto-rows y grid-auto-columns*/
+
+    width: 90%;
+    max-width: 700px;
+    height: 600px;
+    outline: 3px solid;
+    margin: 20px auto;
+
+}
+
+.item{
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+    background-color:crimson;
+    grid-area: header;
+}
+.main{
+    background-color: steelblue;
+    grid-area: main;
+}
+
+.sidebar{
+    background-color: purple;
+    grid-area: sidebar;
+}
+
+.footer{
+    background-color: chocolate;
+    grid-area: footer;
+}
+
+@media(width>=768px){
+    .grid{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: 
+        "header header header header"
+        "main main main sidebar"
+        "main main main sidebar"
+        "footer footer footer footer"
+        ;
+    }
+}

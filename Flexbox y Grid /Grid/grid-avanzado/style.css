@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: fit-content(300px);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+    "header header header header"
+    "main main main sidebar"
+    "main main main sidebar"
+    "footer footer footer footer"
+    ;
+
+    /* min y max content:
+        grid-template-columns: max-content min-content
+       fit-content (es max-content hasta cierto tamaño que pasa a ser un min-content) 
+       minmax(min-content, 1fr) minimo y maximo tamaño
+    ; */
+
+   /*  grid-template-columns: 
+    [header-start] 1fr 1fr [header-end] 1fr;
+    grid-template-rows: 
+    [header-start] 1fr [header-end] 1fr 1fr;
+ */
+    
+    /* grid-template-columns: [linea-i] 1fr [linea-f] 1fr [linea-f-grid];
+    grid-template-rows: [juan] 1fr [jose] 1fr [pedro]; */
+    /* nombres de linea:
+        se le puede colocar nombres a las lineas de grid. Siempre van en corchete y no pueden tener ningun otro espaciado que no sea una -.
+        Una buena práctica es nombrar solo a las lineas que necesitemos nombrar, y usar el nombre del contenedor como header, main, etc. tambien usar el sufijo -start, -end.
+    */
+
+
+    width: 90%;
+    max-width: 600px;
+    height: 600px;
+    outline: 3px solid;
+    margin: 20px auto;
+}
+
+.item{
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.item-1{
+    grid-column: header-start/header-end;
+    grid-row: header-start/header-end;
+    background-color: steelblue;
+}
+
+.item-2{
+    grid-column: main-start/main-end;
+    grid-row: main-start/main-end;
+    background-color: crimson;
+}
+
+.item-3{
+    grid-column: sidebar-start/sidebar-end;
+    grid-row: sidebar-start/sidebar-end;
+    background-color: chocolate;
+}
+
+.item-4{
+    grid-column: footer-start/footer-end;
+    grid-row: footer-start/footer-end;
+    background-color: purple;
+}
