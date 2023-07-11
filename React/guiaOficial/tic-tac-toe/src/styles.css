@@ -1,5 +1,6 @@
  * {
     box-sizing: border-box;
+    margin: 0;
   }
   
   body {
@@ -43,12 +44,21 @@
   
   .tictac__table {
     width: 90%;
-    height: 300px;
+    max-width: 600px;
+    height: 600px;
     margin: 0 auto;
     border: 0.5px solid black;
   
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+  }
+
+  .status{
+    width: max-content;
+    margin: 2em auto;
+    
+    font-size: 2em;
+    font-weight: bold;
   }
   
