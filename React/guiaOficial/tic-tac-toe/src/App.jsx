@@ -1,9 +1,10 @@
-import  Board  from "./board";
+import  Gallery,{Profile}  from "./profile";
+
 import './styles.css';
 function App() {
   return(
     <>
-      <Board />
+      <Profile />
     </>
   );
 
