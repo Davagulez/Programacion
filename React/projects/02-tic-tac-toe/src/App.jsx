@@ -1,63 +1,17 @@
 import { useState } from 'react'
 import confetti from 'canvas-confetti'
 import './App.css'
-
-const TURNS = {
-  X: 'X',
-  O: 'O'
-}
+import {Square} from './components/Square.jsx'
+import {TURNS} from './constants.js'
+import {checkWinnerFrom} from './logic/board.js'
+import {WinnerModal} from './components/WinnerModal.jsx'
 
 const board = Array(9).fill(null) 
-
-const Square = ({children, updateBoard, index, isSelected}) => {
-  const className = `square ${isSelected ? 'is-selected' : ''}`
-  
-  const handleClick = () => {
-    updateBoard(index)
-  }
-  
-  return (
-    <div onClick={handleClick} className={className}>
-      <span className='cell__content'>
-        {children}
-      </span>
-    </div>
-  )
-}
-
-//tarea: aplicar otro metodo/logica de programacion
-// para saber quien es el ganador
-const WINNER_COMBINATIONS = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [2,4,6],
-  [0,4,8],
-  [0,3,6],
-  [1,4,7],
-  [2,5,8]
-]
-
 
 function App() {
   const [board,setBoard] = useState(Array(9).fill(null))
   const [turn, setTurn] = useState(TURNS.X)
   const [winner, setWinner] = useState(null)
-
-  const checkWinner = (boardTocheck) => {
-    // revisamos todas las combinaciones ganadoras
-    // para saber si hay un ganador
-    for (const combo of WINNER_COMBINATIONS) {
-      const [a,b,c] = combo
-      if (
-        boardTocheck[a] && // 0 -> x u o
-        boardTocheck[a] === boardTocheck[b] && 
-        boardTocheck[a] === boardTocheck[c]) {
-        return boardTocheck[a]
-      }
-    }
-    return null
-  }
 
   const resetGame = () => {
     setBoard(Array(9).fill(null))
@@ -85,7 +39,7 @@ function App() {
     setTurn(newTurn) 
 
     //revisar si hay un ganador
-    const newWinner = checkWinner(newBoard)
+    const newWinner = checkWinnerFrom(newBoard)
     if (newWinner) {
       confetti()
       setWinner(newWinner)
@@ -120,31 +74,8 @@ function App() {
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
       </section>
 
-      {
-        winner !== null && (
-          <section className='winner'>
-           <div className='text'>
-              <h2>
-                {
-                  winner === false
-                  ? 'Empate'
-                  : 'El ganador es: ' + winner
-                  
-                }
-              </h2>
-           </div>
-           
-           <header className='win'>
-              {winner && <Square>{winner}</Square>}
-           </header>
+      <WinnerModal winner={winner} resetGame={resetGame}/>
 
-           <footer>
-              <button onClick={resetGame}>Empezar de nuevo</button>
-           </footer>
-           
-          </section>
-        )
-      }
     </main>
   )
 }
