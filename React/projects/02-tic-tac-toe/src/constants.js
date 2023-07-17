@@ -1,6 +1,6 @@
 export const TURNS = {
-    X: 'X',
-    O: 'O'
+    X: '❌',
+    O: '⚪'
 }
 
 //tarea: aplicar otro metodo/logica de programacion
